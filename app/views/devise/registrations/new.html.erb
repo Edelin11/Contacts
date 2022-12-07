@@ -1,0 +1,88 @@
+<h1 class="container text-primary w-50 text-center fw-bold">Contacts & Passwords Book</h1>
+
+<% if current_user %>
+    <p>Welcome <%= current_user.email %>, </p> 
+
+    <p> You have successfully loged in.</p>
+   
+  <% end %>
+
+
+<div class="container mb-5 ">
+
+  <div class="row ">
+
+    <div class="col fw-light bg-info shadow border rounded-4 border-primary m-3 p-2">
+
+      <div class="d-flex justify-content-center m-3"> 
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <h3 class="text-center fw-bold m-2 ">Register</h3>
+
+        <div class="field fs-5"> 
+          <%= f.label :email, class:"fst-italic" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"border border-1 border-primary rounded-2 enable-shadows shadow mb-3 ", placeholder:" email" %>
+        </div>
+
+        <div class="field fs-5">
+          <%= f.label :password, class:"fst-italic" %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"border border-1 border-primary rounded-2 enable-shadows shadow mb-3 ", placeholder:" password" %>
+        </div>
+
+        <div class="field fs-5">
+          <%= f.label :password_confirmation, class:"fst-italic" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"border border-1 border-primary rounded-2 enable-shadows shadow mb-3 ", placeholder:" comfirm password" %>
+        </div>
+
+        <div class="actions" >
+          <%= f.submit "Sign up", data: {turbo: false}, class:"btn btn-secondary enable-shadows shadow  border border-3 border-primary border-top-0 border-end-0 border-start-0 mt-2 mb-2"  %>
+        </div>
+
+        <% end %>
+
+      </div> <!-- 1 JUSTIFY-CONTENT-CENTER END -->
+    </div> <!-- 1 COL END -->
+
+    <div class="col fw-light bg-info shadow border rounded-4 border-primary m-3 p-2 " style="background:#e1f5fe; box-shadow: 3px 3px 15px 5px lightblue;">
+
+      <div class="d-flex justify-content-center"> 
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <h3 class="text-center fw-bold m-2 ">Sign In</h3>
+
+        <div class="field fs-5">
+          <%= f.label :email, class:"fst-italic" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"border border-1 border-primary rounded-2 enable-shadows shadow mb-3 ", placeholder:" email" %>
+        </div>
+
+        <div class="field fs-5">
+          <%= f.label :password, class:"fst-italic" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class:"border border-1 border-primary rounded-2 enable-shadows shadow mb-3 ", placeholder:" password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", data: {turbo: false}, class:"btn btn-secondary enable-shadows shadow  border border-3 border-primary border-top-0 border-end-0 border-start-0 mt-3 mb-3"  %>
+        </div>
+        <% end %>
+
+      </div> <!-- 2 JUSTIFY-CONTENT-CENTER END -->
+    </div> <!-- 2 COL END -->
+
+
+</div> <!-- ROW END -->
+
+
+</div> <!-- CONTAINER END -->
+

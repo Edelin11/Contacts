@@ -1,0 +1,42 @@
+<div id="<%= dom_id contact %>">
+
+<div class="card d-flex justify-content-center"style="width: 20rem;" >
+
+  <div class="card-header bg-primary fs-1 text-info fw-bolder m-2">
+    <%= contact.first_name %>
+    <%= contact.last_name %>
+  </div>
+
+  <div class="card-body ">
+  
+    <p>
+      <strong>Phone number:</strong>
+      <%= contact.phone_number %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= contact.email %>
+    </p>
+
+    <p>
+      <strong>Website:</strong>
+      <%= contact.website %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= contact.adress %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= contact.notes %>
+    </p>
+
+  
+  </div>
+</div>
+
+
+</div>

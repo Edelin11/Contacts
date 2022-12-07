@@ -1,0 +1,56 @@
+<%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="m-3">
+    <p class="m-3"> 
+      <%= form.label :first_name, style: "display: block", class:"fw-bold" %>
+      <%= form.text_field :first_name, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" first name" %>
+    </p>
+    <p class="m-3"> 
+      <%= form.label :last_name, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_field :last_name, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" last name"%>
+    </p>
+    <p class="m-3"> 
+      <%= form.label :phone_number, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_field :phone_number, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" phone number" %>
+    </p>
+
+    <p class="m-3">
+      <%= form.label :email, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_field :email, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" email"  %>
+    </p>
+    <p class="m-3">
+      <%= form.label :website, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_field :website, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" website" %>
+    </p>
+    <p class="m-3">
+      <%= form.label :address, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_field :adress, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" address" %>
+    </p>
+ 
+    <p class="m-3">
+      <%= form.label :notes, style: "display: block",  class:"fw-bold"  %>
+      <%= form.text_area :notes, class:"fw-light border border-1 rounded-1 border-primary shadow", placeholder:" notes" %>
+    </p>
+
+    <p class="m-3">
+     <%= form.number_field :user_id, id: :index_contacts_on_user_id, value: current_user.id, type: :hidden %>
+    </p>
+    
+  </div>
+
+
+  <div>
+    <%= form.submit class:"btn btn-secondary enable-shadows shadow border border-3 border-primary border-top-0 border-end-0 border-start-0 mb-3" %>
+  </div>
+<% end %>

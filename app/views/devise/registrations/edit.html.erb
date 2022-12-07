@@ -1,0 +1,42 @@
+<h2>Edit My <%= resource_name.to_s.humanize %> Account</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"border border-1 border-primary rounded-1 enable-shadows shadow mb-3 ", placeholder:" email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"border border-1 border-primary rounded-1 enable-shadows shadow mb-3 ", placeholder:" new password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"border border-1 border-primary rounded-1 enable-shadows shadow mb-3 ", placeholder:" confirm new password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class:"border border-1 border-primary rounded-1 enable-shadows shadow mb-3 ", placeholder:" current password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", class:"btn btn-info enable-shadows shadow  border border-3 border-primary border-top-0 border-end-0 border-start-0 mt-2 mb-5" %>
+  </div>
+<% end %>
+
+<h3>Delete my account</h3>
+
+<p> <%= button_to "Delete", registration_path(resource_name), form: { data: { turbo_confirm: "Delete Account?" } }, method: :delete, class:"fw-bold btn btn-secondary enable-shadows shadow  border border-3 border-danger border-top-0 border-end-0 border-start-0  mb-5" %></p>
+

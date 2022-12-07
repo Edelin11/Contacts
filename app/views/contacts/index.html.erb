@@ -1,0 +1,52 @@
+
+<% if user_signed_in? %>
+<h1 class="m-3  text-primary fw-bolder text-center fst-italic"> Contacts Book </h1>
+
+
+<div id="contacts" style="background:#e1f5fe; box-shadow: 3px 3px 15px 5px lightblue;" class="card p-3 border border-light"> 
+
+<table class="table table-dark table-striped table-hover"> 
+
+  <thead class="table-secondary text-dark">
+    <tr>
+      <th>Name</th>
+      <th>Phone number</th>
+      <th>Notes</th> 
+      <th>More</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+  <% @contacts.each do |contact| %>
+    <!-- <%= render contact  %> -->
+    <% if contact.user == current_user %>
+    <tr>
+      <td>
+        <%= link_to contact.first_name + ' ' + contact.last_name, contact,  class:"text-decoration-none text-info" %>
+      </td>
+      <td>
+        <%= contact.phone_number %>
+      </td>
+       <td>
+        <%= contact.notes %>
+      </td>
+       <td>
+        <%= link_to "More", contact,  class:"text-decoration-none text-info" %>
+      </td>
+ 
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+
+  </table>
+  
+</div>
+
+<p class="mt-5 "> 
+<%= link_to "New contact", new_contact_path, class:"fw-bolder btn btn-secondary text-decoration-none enable-shadows shadow  border border-3 border-info border-top-0 border-end-0 border-start-0" %>
+</p>
+
+<% end %>
+

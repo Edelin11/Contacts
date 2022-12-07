@@ -1,0 +1,20 @@
+
+<!-- First Component -->
+<div class="d-flex align-items-center mb-5" style="margin-top: 50px;"> 
+
+<!-- Card for Contact full information -->
+  <div class="card p-3 " style="background:#e1f5fe; box-shadow: 3px 3px 15px 5px lightblue;"> 
+    <%= render @contact %> 
+
+    <div class="d-flex align-self-start">
+      <%= link_to "Edit", edit_contact_path(@contact), class:"m-2 btn btn-info text-decoration-none enable-shadows shadow border border-3 border-primary border-top-0 border-end-0 border-start-0" %> 
+
+      <%= button_to "Delete", @contact, method: :delete, form: { data: { turbo_confirm: "Delete this contact?" } }, class:"m-2 btn btn-info text-decoration-none enable-shadows shadow border border-3 border-primary border-top-0 border-end-0 border-start-0" %>
+      
+      <%= link_to "Back to book", contacts_path, class:"m-2 btn btn-info enable-shadows shadow  border border-3 border-primary border-top-0 border-end-0 border-start-0" %> 
+    </div>
+
+
+  </div>
+ 
+</div>
