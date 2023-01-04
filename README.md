@@ -1,9 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Hello my name is Edelin and this is a project I did following the guidance of a youtube video.
 
-Things you may want to cover:
+* Link to the project: 
+
+* How to access the website without an account: 
+	* email: test1@gmail.com, this email does not exist. Or maybe it does.
+	* password: 12345678
 
 * Ruby version
 
