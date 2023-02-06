@@ -9,7 +9,7 @@
 
 * How to access the website without an account: 
 	* email: test1@gmail.com, this email does not exist. Or maybe it does.
-	* password: 12345678
+	* password: 12345678 ßß
 
 * Ruby version
 
