@@ -5,7 +5,7 @@
 * The purpose is to have a website where you can create a list of contacts or you can use this website to store passwords
 or any other information.
 
-* the project is not hosted yet.
+* The project is not hosted yet.
 
 *
 *
