@@ -1,6 +1,5 @@
 # README
 
-* Hello my name is Edelin and this is a project I did following the guidance of a youtube video.
 
 * The purpose is to have a website where you can create a list of contacts or you can use this website to store passwords
 or any other information.
